@@ -15,7 +15,7 @@ The old crawl used **`http://www.gailphillips.net/`** as the live homepage. Matc
 | Old (WordPress) | New (Astro) | Why |
 |-----------------|-------------|-----|
 | 16 specialty / about / appointment paths | Closest new page or article | Same intent, passes equity |
-| `/resources/` | `/resources` | Old hub page (18 inlinks in crawl) |
+| `/resources/` | *(none — same URL on new site)* | Old WP hub path matches Astro `/resources`; do not self-redirect |
 | Any `/:path/` with trailing slash | `/:path` | WordPress trailing slashes |
 | `/wp-content/*`, `/wp-includes/*` | **410 Gone** | Assets/PDFs — not redirected to Home |
 

@@ -31,9 +31,7 @@
     { "source": "/eating-disorders-2", "destination": "/who-i-work-with#eating-disorders", "permanent": true },
     { "source": "/eating-disorders-2/", "destination": "/who-i-work-with#eating-disorders", "permanent": true },
     { "source": "/destructive-dieting", "destination": "/who-i-work-with#eating-disorders", "permanent": true },
-    { "source": "/destructive-dieting/", "destination": "/who-i-work-with#eating-disorders", "permanent": true },
-    { "source": "/resources", "destination": "/resources", "permanent": true },
-    { "source": "/resources/", "destination": "/resources", "permanent": true }
+    { "source": "/destructive-dieting/", "destination": "/who-i-work-with#eating-disorders", "permanent": true }
   ],
   "headers": [
     {
