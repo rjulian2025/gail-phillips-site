@@ -6,7 +6,8 @@ export const site = {
   ogImage: '/images/gail-garden-hero.webp',
   license: 'LCSW #1528',
   fee: '$250 per session, private pay',
-  email: 'gail@example.com',
+  // Contact is via /begin form → /api/contact (CONTACT_TO_EMAIL in Vercel). No public inbox on site.
+  email: '',
   phone: ''
 } as const;
 

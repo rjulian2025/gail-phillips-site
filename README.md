@@ -2,7 +2,9 @@
 
 Astro static site for **Gail A. Phillips** (Buckhead psychodynamic psychotherapy). Migrated from [bhead-psych-preview](https://github.com/rjulian2025/bhead-psych-preview).
 
-**Not related to** the [Michel Bordeau](../michel-bordeau-site/) project — separate repo, client, domain, and Vercel project.
+**Not related to** the [Michel Bordeau](../michel-bordeau-site/) or [Deeper Websites](../deeperwebsites-coming-soon/) projects — separate repo, client, domain, Vercel project, and dev port.
+
+Open this directory as your **Cursor workspace root** when working on Gail (do not use `Desktop/Deeper Websites`, which is only the agency messaging API).
 
 ## Local development
 
@@ -11,7 +13,7 @@ npm install
 npm run dev
 ```
 
-http://127.0.0.1:4323
+http://127.0.0.1:4324
 
 ## Deploy (Vercel)
 

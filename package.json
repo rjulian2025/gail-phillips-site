@@ -3,9 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev --host 127.0.0.1 --port 4323",
+    "dev": "astro dev --host 127.0.0.1 --port 4324",
     "build": "astro build",
-    "preview": "astro preview --host 127.0.0.1 --port 4323"
+    "preview": "astro preview --host 127.0.0.1 --port 4324",
+    "clean": "rm -rf dist .astro"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.2.11",
