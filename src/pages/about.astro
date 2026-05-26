@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const title = 'About Gail A. Phillips, LCSW — Psychodynamic Therapy';
+const description =
+  'Gail A. Phillips, LCSW, is a Buckhead-based psychodynamic psychotherapist with 34 years of clinical experience working with thoughtful adults.';
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/about">
+  <PageHeader
+    eyebrow="About"
+    title="A practice built quietly,<br />over many years."
+    lede="For over thirty years, and through my own experiences of grief and suffering, I have come to see psychotherapy as sacred work. I strive to create a space where you can exhale, feel safe, and speak honestly — without fear of judgment."
+  />
+
+  <section class="py-20 lg:py-28">
+    <div class="container-wide grid lg:grid-cols-[0.7fr_1.6fr] gap-16 lg:gap-24 items-start">
+      <div class="lg:sticky lg:top-28 max-w-xs">
+        <img src="/images/gail-portrait-new.jpg" alt="Portrait of Gail A. Phillips, LCSW" class="w-full aspect-[4/5] object-cover shadow-xl" loading="lazy" width="800" height="1000" />
+        <p class="mt-6 text-xs text-muted-foreground italic">Gail A. Phillips, LCSW · Buckhead, Atlanta</p>
+      </div>
+      <div class="space-y-7 text-lg leading-relaxed text-ink/85">
+        <p>
+          I am a Licensed Clinical Social Worker in Georgia and Florida, with a private practice in Buckhead. From the beginning of my career — thirty-four years ago — I trained psychodynamically, and that orientation has remained the spine of how I work.
+        </p>
+        <p>I integrate several psychotherapy approaches as the work calls for them. The depth model still holds. The other tools serve it.</p>
+        <p>
+          I've been most shaped by the modern relational psychodynamic tradition — a lineage that trusts depth and understands that lasting change comes through relationship, not technique. It takes a person seriously: history, inner life, the patterns that repeat in the room between us. The work is slow, honest, and assumes you are far more than your symptoms.
+        </p>
+        <p>
+          My work is also grounded in existential therapy. It honors the realities of being human: loss, longing, uncertainty, change, and the search for meaning. Together we cultivate healing, growth, and self-compassion — learning to meet yourself with greater kindness.
+        </p>
+        <p>I sit in meditation every morning and have for sixteen years. I have also meditated with a small group of women many days a week for several years.</p>
+        <blockquote class="mt-2 mb-8 border-l-2 border-border pl-6 font-serif italic text-ink/75 text-base leading-loose">
+          <p>May you be well and free from suffering.</p>
+          <p>May you be happy, playful, and joyful.</p>
+          <p>May you be loved and deeply love yourself and others.</p>
+          <p>May you be at peace and live with ease.</p>
+          <footer class="mt-3 text-xs not-italic text-muted-foreground">Loving-Kindness Meditation — Gail A. Phillips</footer>
+        </blockquote>
+        <p>
+          Confidentiality is not just something I list at the end of a form. It is part of how I understand this work — sacred, deserving of profound honor, respect, and protection. My home office has a fully discreet entrance. Many of my clients are well known; many more simply value the privacy of being unobserved while they think out loud.
+        </p>
+        <p>I live a quiet life, and I bring that quiet with me into the room.</p>
+        <p>I'm married to Tom Phillips (a psychologist), and we have two adult children and two dogs.</p>
+        <p>I also love to play, laugh, dance, hike, and sit quietly in nature.</p>
+
+        <div class="mt-12 pt-10 border-t border-border">
+          <h2 class="eyebrow !text-xs !font-bold !tracking-[0.18em]">Training & Credentials</h2>
+          <dl class="mt-8 space-y-8">
+            <div class="grid sm:grid-cols-[10rem_1fr] gap-x-8 gap-y-2">
+              <dt class="text-xs uppercase tracking-[0.18em] text-muted-foreground pt-1">Licensure</dt>
+              <dd class="space-y-2 text-base text-ink/80">
+                <p>Licensed Clinical Social Worker, #1528 <span class="text-muted-foreground">· 1992</span></p>
+                <p class="text-muted-foreground">Licensed in Georgia and Florida</p>
+              </dd>
+            </div>
+            <div class="grid sm:grid-cols-[10rem_1fr] gap-x-8 gap-y-2">
+              <dt class="text-xs uppercase tracking-[0.18em] text-muted-foreground pt-1">Education</dt>
+              <dd class="space-y-2 text-base text-ink/80">
+                <p>Master of Social Work <span class="text-muted-foreground">· University of Southern California · 1988</span></p>
+                <p>Bachelor of Arts <span class="text-muted-foreground">· University of Georgia · 1984</span></p>
+              </dd>
+            </div>
+            <div class="grid sm:grid-cols-[10rem_1fr] gap-x-8 gap-y-2">
+              <dt class="text-xs uppercase tracking-[0.18em] text-muted-foreground pt-1">Clinical Training</dt>
+              <dd class="space-y-2 text-base text-ink/80">
+                <p>Psychodynamic psychotherapy <span class="text-muted-foreground">— primary orientation</span></p>
+                <p class="text-muted-foreground">Cognitive Behavioral Therapy · Acceptance and Commitment Therapy · Gottman Couples Therapy · Emotionally Focused Couples Therapy · Mindful Self-Compassion · Internal Family Systems · Mindfulness-Based Stress Reduction · Attachment theory</p>
+              </dd>
+            </div>
+            <div class="grid sm:grid-cols-[10rem_1fr] gap-x-8 gap-y-2">
+              <dt class="text-xs uppercase tracking-[0.18em] text-muted-foreground pt-1">Continuing Study</dt>
+              <dd class="text-base text-ink/80">
+                <p>Ongoing continuing education trainings. Psychotherapy consultation group for 20 years.</p>
+              </dd>
+            </div>
+            <div class="grid sm:grid-cols-[10rem_1fr] gap-x-8 gap-y-2">
+              <dt class="text-xs uppercase tracking-[0.18em] text-muted-foreground pt-1">Practice</dt>
+              <dd class="text-base text-ink/80">
+                <p>Thirty-four years of clinical practice in Buckhead, Atlanta.</p>
+              </dd>
+            </div>
+          </dl>
+          <a href="/begin" class="btn-quiet mt-12">Schedule a complimentary consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-linen py-20 lg:py-28 border-t border-border">
+    <div class="container-wide">
+      <div class="max-w-2xl">
+        <p class="eyebrow"><span class="rule mr-3"></span>The space</p>
+        <h2 class="mt-6 font-serif">A private home office in Buckhead.</h2>
+        <p class="mt-6 text-muted-foreground leading-relaxed">
+          Discreet parking, a quiet entrance shared with my husband's practice,<br />
+          and a room created for the kind of slow, unfolding conversation at the heart of this work.
+        </p>
+      </div>
+      <div class="mt-14 grid md:grid-cols-3 gap-6 lg:gap-8">
+        <figure>
+          <img src="/images/office-exterior.webp" alt="The exterior of the Buckhead home office, surrounded by hedges and seasonal flowers" class="w-full aspect-[4/5] object-cover shadow-lg" loading="lazy" width="1600" height="2000" />
+          <figcaption class="mt-3 text-xs text-muted-foreground italic">Arrival · Buckhead</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/office-door.webp" alt="The dark green private entrance door with brass nameplates" class="w-full aspect-[4/5] object-cover shadow-lg" loading="lazy" width="1200" height="1500" />
+          <figcaption class="mt-3 text-xs text-muted-foreground italic">A discreet, private entrance</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/office-room.webp" alt="The consulting room with two armchairs and warm lamplight" class="w-full aspect-[4/5] object-cover shadow-lg" loading="lazy" width="1600" height="2000" />
+          <figcaption class="mt-3 text-xs text-muted-foreground italic">The consulting room</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

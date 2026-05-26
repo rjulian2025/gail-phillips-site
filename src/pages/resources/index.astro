@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { articles } from '../../data/articles';
+import { articleImages } from '../../data/article-images';
+
+const title = 'Resources — Articles | Gail A. Phillips, LCSW';
+const description =
+  'Substantive, evergreen writing on psychotherapy, relational patterns, the nervous system, and the inner work of becoming an observer of yourself.';
+
+const topics = [
+  {
+    bucket: 'Meta-Awareness',
+    eyebrow: 'Meta-Awareness',
+    title: 'Meta-awareness & the observing self',
+    body: 'The first and quietest shift in depth work — learning to notice your own patterns as they happen, without being swept into them.'
+  },
+  {
+    bucket: 'Relational Dynamics',
+    eyebrow: 'Relational Dynamics',
+    title: 'Relational patterns & attachment dynamics',
+    body: 'On the unspoken choreography of close relationships — healthy and otherwise — and how childhood templates follow us into adult life.'
+  },
+  {
+    bucket: 'Nervous System Regulation',
+    eyebrow: 'Nervous System Regulation',
+    title: 'Regulation, breath, and the body in the work',
+    body: 'On the Vagus nerve, the psychology of breath, and why genuine regulation is the ground that depth work has to stand on.'
+  },
+  {
+    bucket: 'For Therapists',
+    eyebrow: 'For Therapists',
+    title: 'For therapists: the inner cost of holding space',
+    body: 'Quiet reflections for clinicians — on why we need our own therapy, and on the cumulative weight of doing this work for a living.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/resources">
+  <PageHeader
+    eyebrow="Resources"
+    title="A library, not a blog."
+    lede="Substantive, evergreen writing on the inner work — what it asks, what makes it possible, and what gets in the way. Articles are added thoughtfully, not on a schedule."
+  />
+
+  <section class="py-20 lg:py-28">
+    <div class="container-wide space-y-24 lg:space-y-32">
+      {
+        topics.map((topic) => {
+          const items = articles.filter((a) => a.bucket === topic.bucket);
+          return (
+            <div>
+              <div class="mb-10 border-b border-border pb-7 lg:mb-12 lg:pb-8">
+                <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+                  <div>
+                    <p class="eyebrow"><span class="rule mr-3"></span>{topic.eyebrow}</p>
+                    <h2 class="mt-4 font-serif text-3xl lg:text-4xl text-primary leading-tight">{topic.title}</h2>
+                  </div>
+                  <div class="max-w-2xl lg:text-right">
+                    <p class="text-base lg:text-lg text-muted-foreground leading-relaxed">{topic.body}</p>
+                    <p class="mt-4 text-xs uppercase tracking-[0.18em] text-muted-foreground/80">
+                      {items.length} article{items.length === 1 ? '' : 's'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <ul class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {items.map((article) => (
+                  <li>
+                    <a
+                      href={`/resources/${article.slug}`}
+                      class="group flex flex-col h-full bg-card border border-border hover:border-sage transition-colors duration-300 shadow-sm hover:shadow-lg"
+                    >
+                      <div class="relative overflow-hidden aspect-[5/3]">
+                        <img
+                          src={articleImages[article.slug] || '/images/path-hero-b.jpg'}
+                          alt=""
+                          aria-hidden="true"
+                          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          loading="lazy"
+                          width="1024"
+                          height="768"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" aria-hidden="true"></div>
+                      </div>
+                      <div class="flex flex-col flex-1 p-7">
+                        <p class="text-xs uppercase tracking-[0.18em] text-muted-foreground">{article.readMinutes} min read</p>
+                        <h3 class="mt-3 font-serif text-2xl text-primary leading-snug group-hover:text-sage transition-colors">{article.title}</h3>
+                        <p class="mt-4 text-muted-foreground leading-relaxed text-[15px] flex-1">{article.lede}</p>
+                        <span class="mt-6 inline-flex items-center gap-2 font-serif italic text-rose">
+                          Read the article
+                          <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })
+      }
+    </div>
+    <div class="container-prose mt-28 text-center">
+      <p class="eyebrow justify-center"><span class="rule mr-3"></span>When you're ready</p>
+      <p class="mt-6 font-serif italic text-2xl text-primary">If something here speaks to where you are —</p>
+      <a href="/begin" class="btn-quiet mt-8">Schedule a complimentary consultation</a>
+    </div>
+  </section>
+</BaseLayout>
+

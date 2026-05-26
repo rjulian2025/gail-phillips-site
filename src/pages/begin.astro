@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ConsultationForm from '../components/ConsultationForm.astro';
+import { site } from '../data/site';
+
+const title = 'Begin — Schedule a Consultation | Gail A. Phillips, LCSW';
+const description =
+  'Schedule a complimentary 15-minute consultation. Psychodynamic psychotherapy in Buckhead, Atlanta and virtual in GA and FL. $250 per session.';
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/begin">
+  <PageHeader
+    eyebrow="Begin"
+    title="You've taken the hardest step. Let's talk."
+    lede="The first conversation is a complimentary fifteen-minute call to confirm logistical fit — availability, fee, specialty alignment. There is no obligation to continue."
+  />
+
+  <section class="py-20 lg:py-28">
+    <div class="container-wide grid lg:grid-cols-[1.3fr_1fr] gap-16 lg:gap-24">
+      <ConsultationForm />
+      <aside class="space-y-10 text-ink/85">
+        <div>
+          <p class="eyebrow">The consultation</p>
+          <h2 class="mt-4 font-serif text-2xl text-primary">A fifteen-minute call.</h2>
+          <p class="mt-4 text-muted-foreground">Complimentary, brief, and unhurried. We confirm whether the practical pieces line up. There is no pressure to continue, and no charge.</p>
+        </div>
+        <div class="border-t border-border pt-8">
+          <p class="eyebrow">Practical details</p>
+          <dl class="mt-5 space-y-3 text-base">
+            <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
+              <dt class="text-xs uppercase tracking-widest font-bold text-gold">Fee</dt>
+              <dd class="text-muted-foreground">{site.fee}</dd>
+            </div>
+            <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
+              <dt class="text-xs uppercase tracking-widest font-bold text-gold">In-person</dt>
+              <dd class="text-muted-foreground">Buckhead, Atlanta — discreet private entrance</dd>
+            </div>
+            <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
+              <dt class="text-xs uppercase tracking-widest font-bold text-gold">Virtual</dt>
+              <dd class="text-muted-foreground">Telehealth across Georgia and Florida</dd>
+            </div>
+            <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
+              <dt class="text-xs uppercase tracking-widest font-bold text-gold">License</dt>
+              <dd class="text-muted-foreground">{site.license} · GA & FL</dd>
+            </div>
+            <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
+              <dt class="text-xs uppercase tracking-widest font-bold text-gold">Response time</dt>
+              <dd class="text-muted-foreground">Within two business days</dd>
+            </div>
+            <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
+              <dt class="text-xs uppercase tracking-widest font-bold text-gold">Contact</dt>
+              <dd class="text-muted-foreground">Email or phone call-back — no texts</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="border-t border-border pt-8">
+          <p class="eyebrow">If this is a crisis</p>
+          <p class="mt-4 text-muted-foreground">
+            If you are in immediate danger, please call or text <strong class="text-primary">988</strong>, or go to your nearest emergency room.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+

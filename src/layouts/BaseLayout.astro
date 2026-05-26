@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath?: string;
+  ogType?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = site.tagline,
+  canonicalPath = Astro.url.pathname,
+  ogType = 'website',
+  schema = [],
+  noindex = false
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, site.url).href;
+const shareImage = new URL(site.ogImage, site.url).href;
+const pageSchema = Array.isArray(schema) ? schema : schema ? [schema] : [];
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={shareImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={shareImage} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {pageSchema.map((entry) => (
+      <script type="application/ld+json" set:html={JSON.stringify(entry)} />
+    ))}
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col bg-background">
+      <SiteHeader currentPath={Astro.url.pathname} />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <SiteFooter year={year} />
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,22 @@
+{
+  "name": "gail-phillips-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4323",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 4323"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "6.1.6",
+    "tailwindcss": "^4.2.1",
+    "tw-animate-css": "^1.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0"
+  },
+  "overrides": {
+    "vite": "^7"
+  }
+}

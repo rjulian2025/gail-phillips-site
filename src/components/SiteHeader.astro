@@ -1,0 +1,70 @@
+---
+import { nav } from '../data/site';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+}
+---
+
+<header class="sticky top-0 left-0 right-0 z-40 bg-ivory/95 backdrop-blur border-b border-border/60">
+  <div class="container-wide flex items-center justify-between py-5">
+    <a href="/" class="font-serif text-2xl tracking-tight text-sage-deep">
+      Gail A. Phillips<span class="text-gold">, LCSW</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-serif text-[1.05rem] text-sage-deep" aria-label="Main">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          class:list={['hover:text-gold transition-colors', isActive(item.href) && 'text-gold']}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a href="/begin" class="btn-quiet !py-3 !px-5">Begin</a>
+    </nav>
+    <button
+      type="button"
+      class="lg:hidden font-serif text-sage-deep/80 text-base"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      data-nav-toggle
+    >
+      Menu
+    </button>
+  </div>
+  <div id="mobile-nav" class="lg:hidden hidden bg-ivory border-t border-border" data-nav-panel>
+    <div class="container-wide py-6 flex flex-col gap-5 font-serif text-lg text-sage-deep/80">
+      {nav.map((item) => (
+        <a href={item.href} data-nav-link>{item.label}</a>
+      ))}
+      <a href="/begin" class="btn-quiet w-fit" data-nav-link>Begin</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const panel = document.querySelector('[data-nav-panel]');
+  if (toggle && panel) {
+    toggle.addEventListener('click', () => {
+      const open = panel.classList.toggle('hidden');
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.textContent = open ? 'Menu' : 'Close';
+    });
+    panel.querySelectorAll('[data-nav-link]').forEach((link) => {
+      link.addEventListener('click', () => {
+        panel.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = 'Menu';
+      });
+    });
+  }
+</script>
+

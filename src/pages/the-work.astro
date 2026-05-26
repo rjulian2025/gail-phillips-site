@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const title = 'The Work — Psychotherapy Philosophy | Gail A. Phillips';
+const description =
+  'Theoretical orientation and counseling philosophy of a Buckhead psychodynamic psychotherapist. How depth work creates change that holds.';
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/the-work">
+  <PageHeader
+    eyebrow="The Work"
+    title="The deeper currents —<br />and why surface relief rarely holds."
+    lede="There is a real and important difference between counseling and psychotherapy. Both have a place. The depth of what you want determines how we proceed."
+  />
+
+  <section class="py-20 lg:py-28">
+    <div class="container-prose space-y-10 text-lg leading-relaxed text-ink/85">
+      <div>
+        <p class="eyebrow">Counseling vs. Psychotherapy</p>
+        <h2 class="mt-4 mb-6">Both are valuable.<br />They are not the same.</h2>
+        <p>Counseling offers guidance, symptom relief, psychoeducation, and coping strategies. These are genuinely useful, and for many concerns they are enough.</p>
+        <p class="mt-4">Psychotherapy goes further. It observes the moment-to-moment experience of the client — shifts in tone, emotional patterns, what surfaces in the room — and traces these to their origins. It treats the person, not the symptom.</p>
+        <p class="mt-4">In practice, I move between the two, tailoring our collaborative work to the depth of what you need and what feels right for you.</p>
+      </div>
+      <div class="pt-10 border-t border-border">
+        <p class="eyebrow">The Mechanism of Lasting Change</p>
+        <h2 class="mt-4 mb-6">Coping strategies are not the same as change.</h2>
+        <p>Without addressing the underlying psychological structures that generate distress, symptoms tend to return. Real, durable change asks for three things:</p>
+        <div class="mt-8 space-y-8">
+          <div class="pl-8 border-l-2 border-gold">
+            <p class="font-serif text-2xl text-primary">Insight</p>
+            <p class="mt-2 text-muted-foreground">Understanding how formative experiences have shaped your self-perception, your views of the world, and your relationships.</p>
+          </div>
+          <div class="pl-8 border-l-2 border-gold">
+            <p class="font-serif text-2xl text-primary">Corrective emotional and relational experience</p>
+            <p class="mt-2 text-muted-foreground">Safe, new relational experiences in the therapy itself, where old patterns can loosen and new ones begin to form. The therapeutic relationship is not a means to the work. It <em>is</em> the work.</p>
+          </div>
+          <div class="pl-8 border-l-2 border-gold">
+            <p class="font-serif text-2xl text-primary">Changing harmful beliefs</p>
+            <p class="mt-2 text-muted-foreground">Identifying harmful, deeply held assumptions and replacing them with beliefs that are more realistic, flexible, and helpful.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pt-10 border-t border-border">
+        <p class="eyebrow">The Psychodynamic Approach</p>
+        <h2 class="mt-4 mb-6">Nothing is irrelevant.</h2>
+        <p>Small details — relational patterns, dreams, memories, and emotional reactions — may reveal something important. Hopes, fears, and childhood experiences shape us in ways we may not fully realize.</p>
+      </div>
+      <figure class="my-16 py-12 px-8 lg:px-14 bg-linen border-l-2 border-gold">
+        <blockquote class="font-serif italic text-2xl lg:text-3xl text-primary leading-snug">
+          "My goal is to help you begin feeling better immediately — and to do the deeper work necessary for meaningful, lasting change, so you won't end up back where you started."
+        </blockquote>
+        <figcaption class="eyebrow mt-6">— Gail</figcaption>
+      </figure>
+      <div class="pt-4">
+        <p class="eyebrow">Integration</p>
+        <h2 class="mt-4 mb-6">A psychodynamic structure, with other tools when needed.</h2>
+        <p>While the work is fundamentally psychodynamic, I draw on other evidence-based modalities as each client's needs call for them — CBT, EFT, Gottman, IFS, ACT, MBSR, MSC, Attachment, and direct psychoeducation.</p>
+      </div>
+      <div class="pt-10 border-t border-border">
+        <h2 class="eyebrow !text-xs !font-bold !tracking-[0.18em]">A Note on Health Insurance Mandating Brief Counseling</h2>
+        <p class="mt-5">In the 1990s, for the first ten years of my practice, psychotherapy was done correctly — slow, deep, deliberate, relational.</p>
+        <p class="mt-4">Sadly, the 2000s brought managed care, dictating brief, technique-focused therapy which often leaves people feeling temporarily better — but ultimately unchanged.</p>
+        <p class="mt-4">If you long for meaningful, lasting change — in how you relate, how you feel, how you live — then I invite you to join me in this slow, rigorous, relational work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-sage-deep text-ivory">
+    <div class="container-prose text-center">
+      <p class="eyebrow !text-gold">A first conversation</p>
+      <h2 class="mt-5 text-ivory font-serif">If something here resonates.</h2>
+      <a href="/begin" class="btn-quiet mt-10 !border-ivory !bg-transparent !text-ivory hover:!bg-ivory hover:!text-sage-deep">Schedule a complimentary consultation</a>
+    </div>
+  </section>
+</BaseLayout>
+

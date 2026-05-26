@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const title = 'For Therapists — Your Own Depth Work | Gail A. Phillips, LCSW';
+const description =
+  'Psychodynamic psychotherapy for therapists. A discreet practice where the person who usually holds the space can finally be the client.';
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/for-therapists">
+  <PageHeader eyebrow="For Therapists" title="You give so much.<br />This is for you." lede="Therapists are the rocks that others lean on. Who does the rock lean on?" />
+
+  <section class="py-20 lg:py-28">
+    <div class="container-wide grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div class="space-y-7 text-lg leading-relaxed text-ink/85">
+        <p>Most of us came to this field because of our own difficult experiences. We learned to make use of them. We learned to hold space, to be steady, to put our own material to the side so we could meet someone else's.</p>
+        <p>And then we did it again and again, for years.</p>
+        <p>This is a practice where you don't have to hold yourself together. Where the work isn't supervision or peer consultation. It is your own therapy — deep, psychodynamic, unhurried — with someone who knows the terrain from both sides.</p>
+        <div class="mt-12 pt-10 border-t border-border space-y-6">
+          <h2 class="eyebrow !text-xs !font-bold !tracking-[0.18em]">What I bring</h2>
+          <ul class="mt-5 space-y-4">
+            <li>— Deep familiarity with the specific challenges of clinical work — vicarious trauma, countertransference, professional isolation, ethical strain.</li>
+            <li>— An understanding that many of us entered the field because of our own histories, and that those histories deserve their own attention.</li>
+            <li>— A fully discreet practice outside any clinical or institutional setting. A home office with a private entrance.</li>
+            <li>— Psychodynamic depth work. Not coaching. Not supervision. Actual therapy.</li>
+          </ul>
+        </div>
+        <a href="/begin" class="btn-quiet mt-10">Schedule a complimentary consultation</a>
+      </div>
+      <div class="lg:sticky lg:top-28">
+        <img src="/images/office-window.jpg" alt="A sunlit window with linen curtains and an open book" class="w-full aspect-[4/5] object-cover shadow-xl" loading="lazy" width="1600" height="2000" />
+        <p class="mt-6 italic font-serif text-xl text-primary">"The therapist needs a place to be the person, not the practitioner."</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

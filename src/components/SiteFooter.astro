@@ -1,0 +1,49 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  year: number;
+}
+const { year } = Astro.props;
+---
+
+<footer class="mt-32 bg-sage-deep text-ivory">
+  <div class="container-wide py-20 grid gap-16 lg:grid-cols-3">
+    <div>
+      <p class="eyebrow !text-gold">Begin</p>
+      <h2 class="mt-4 font-serif text-3xl text-ivory">You've taken the hardest step.</h2>
+      <p class="mt-4 text-ivory/75 italic font-serif text-lg">Let's talk.</p>
+      <a
+        href="/begin"
+        class="btn-quiet mt-8 !border-ivory !bg-transparent !text-ivory hover:!bg-ivory hover:!text-sage-deep"
+      >
+        Schedule a complimentary consultation
+      </a>
+    </div>
+    <div class="space-y-3 text-sm text-ivory/85">
+      <p class="eyebrow !text-gold">Practice</p>
+      <p class="text-ivory">{site.name}</p>
+      <p>Psychodynamic Psychotherapy</p>
+      <p>Buckhead, Atlanta</p>
+      <p>In-person & virtual sessions</p>
+      <p>Licensed in Georgia & Florida</p>
+    </div>
+    <div class="space-y-3 text-sm text-ivory/85">
+      <p class="eyebrow !text-gold">Explore</p>
+      <ul class="space-y-2">
+        <li><a href="/about" class="hover:text-ivory">About Gail</a></li>
+        <li><a href="/the-work" class="hover:text-ivory">The Work</a></li>
+        <li><a href="/who-i-work-with" class="hover:text-ivory">Who I Work With</a></li>
+        <li><a href="/for-therapists" class="hover:text-ivory">For Therapists</a></li>
+        <li><a href="/resources" class="hover:text-ivory">Resources</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-ivory/10">
+    <div class="container-wide py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-ivory/80">
+      <p>© {year} {site.name}. All rights reserved.</p>
+      <p>{site.license} · Georgia & Florida · {site.fee}</p>
+    </div>
+  </div>
+</footer>
+

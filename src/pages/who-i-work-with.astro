@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const title = 'Who I Work With | Gail A. Phillips, LCSW';
+const description =
+  'Psychodynamic psychotherapy for anxiety, depression, relationship patterns, parenting, addiction, and eating concerns. Buckhead and virtual GA/FL.';
+
+const profiles = [
+  {
+    n: 'I',
+    title: 'The Persistent Struggle',
+    body: 'Chronic or recurring depression that holds you down. Generalized anxiety that steals your peace. No lasting relief despite your best efforts. You know something deeper is going on.'
+  },
+  {
+    n: 'II',
+    title: 'The Relational Pattern',
+    body: 'You find yourself caught in repetitive, painful dynamics — with a partner, a parent, a colleague, a friend. The pattern follows you wherever you go.'
+  },
+  {
+    n: 'III',
+    title: 'The Childhood Inheritance — and Beyond',
+    body: 'You recognize that your family of origin shaped you in ways that are no longer serving you. You want to understand how the past lives in the present, and you are willing to do real work to heal.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/who-i-work-with">
+  <PageHeader
+    eyebrow="Who I Work With"
+    title="Thoughtful adults,<br />ready for something deeper."
+    lede="Most of the people I work with are intelligent, psychologically-minded, and have already tried the things that were supposed to be enough. They aren't broken. They are ready."
+  />
+
+  <section class="py-20 lg:py-28">
+    <div class="container-wide grid gap-14 lg:gap-20 lg:grid-cols-3">
+      {profiles.map((p) => (
+        <article class="bg-card p-10 border-t-2 border-gold">
+          <p class="font-serif text-5xl text-gold leading-none">{p.n}</p>
+          <h3 class="mt-6 font-serif text-2xl text-primary">{p.title}</h3>
+          <p class="mt-5 text-muted-foreground leading-relaxed">{p.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28 bg-linen">
+    <div class="container-prose space-y-10 text-lg leading-relaxed text-ink/85">
+      <div>
+        <p class="eyebrow">The Right Fit</p>
+        <h2 class="mt-4">Where this work lands well.</h2>
+        <h3 class="mt-8 font-serif text-xl text-primary">Individual psychotherapy for adults who are experiencing</h3>
+        <ul class="mt-5 space-y-3">
+          <li>— Persistent depression, sadness, hopelessness, loss of motivation.</li>
+          <li>— Chronic anxiety, panic attacks, excessive worry.</li>
+          <li>— Relationship problems, conflict, attachment issues.</li>
+          <li>— The effects of childhood abuse, neglect, lack of attunement.</li>
+          <li>— Feeling stuck, empty, or not as happy as they could be even with pretty good lives.</li>
+          <li>— Grief and loss: death, divorce or break-up, a move, aging, empty nest, retirement.</li>
+          <li>— End-of-life questions and the search for meaning.</li>
+        </ul>
+        <h3 class="mt-10 font-serif text-xl text-primary">Relationship psychotherapy for couples, adult family members, roommates, coworkers with</h3>
+        <ul class="mt-5 space-y-3">
+          <li>— Criticism, defensiveness, feeling unheard, arguing that never really gets resolved.</li>
+          <li>— Feeling emotionally distant, lonely, or disconnected even when together.</li>
+          <li>— Loss of trust, secrecy, suspicion or betrayal.</li>
+          <li>— Repeating the same unhealthy patterns after promising change.</li>
+          <li>— Tension due to differences in values, goals, finances, parenting, or lifestyle.</li>
+        </ul>
+      </div>
+      <div class="pt-10 border-t border-border">
+        <p class="eyebrow">When this isn't the right fit</p>
+        <h2 class="mt-4">Honest, with care.</h2>
+        <p class="mt-5">Part of the work of a first conversation is being honest about fit.</p>
+        <p class="mt-4">If you plan to harm or kill yourself or someone else, if you have such severe depression or anxiety that you cannot function, or if you are experiencing psychosis, then you need more support than I am able to provide in my solo, non-emergency private practice.</p>
+        <p class="mt-4">Please seek immediate help by calling 911 or go to the emergency room.</p>
+      </div>
+      <div class="pt-10 border-t border-border space-y-12">
+        <p class="eyebrow">Concerns I often meet</p>
+        <h2 class="!mt-4">Specific struggles, met with depth.</h2>
+        <div id="parenting" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl text-primary">Parenting problems</h2>
+          <p class="mt-4">Parenting surfaces every unfinished piece of our own upbringing. The work here is rarely about parenting techniques.</p>
+        </div>
+        <div id="addiction" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl text-primary">Addiction and compulsive patterns</h2>
+          <p class="mt-4">Substances, food, work, screens, intensity — addictive patterns almost always sit on top of something the rest of life has not been able to hold.</p>
+        </div>
+        <div id="eating-disorders" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl text-primary">Eating concerns and body image</h2>
+          <p class="mt-4">Disordered eating, chronic dieting, and a punishing relationship with the body are rarely about food.</p>
+        </div>
+      </div>
+      <div class="pt-10 border-t border-border">
+        <a href="/begin" class="btn-quiet">Schedule a complimentary consultation</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

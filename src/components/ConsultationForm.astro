@@ -1,0 +1,139 @@
+---
+// Client-side validation mirrors the Lovable form; POSTs to /api/contact when configured.
+---
+
+<form id="consultation-form" class="space-y-7" novalidate>
+  <div>
+    <label for="name" class="eyebrow block mb-3">Name<span class="text-gold"> *</span></label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      required
+      maxlength="120"
+      class="w-full bg-card border border-input px-5 py-4 font-serif text-lg text-ink focus:outline-none focus:border-sage-deep transition"
+    />
+  </div>
+  <div>
+    <label for="email" class="eyebrow block mb-3">Email<span class="text-gold"> *</span></label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      required
+      maxlength="255"
+      class="w-full bg-card border border-input px-5 py-4 font-serif text-lg text-ink focus:outline-none focus:border-sage-deep transition"
+    />
+  </div>
+  <div>
+    <label for="phone" class="eyebrow block mb-3">Phone (optional)</label>
+    <input
+      id="phone"
+      name="phone"
+      type="tel"
+      maxlength="40"
+      class="w-full bg-card border border-input px-5 py-4 font-serif text-lg text-ink focus:outline-none focus:border-sage-deep transition"
+    />
+  </div>
+  <div>
+    <label for="message" class="eyebrow block mb-3">What brings you here?</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      maxlength="2000"
+      rows="5"
+      placeholder="A sentence or two is enough."
+      class="w-full bg-card border border-input px-5 py-4 font-serif text-lg text-ink focus:outline-none focus:border-sage-deep transition"
+    ></textarea>
+  </div>
+  <div>
+    <label class="eyebrow block mb-3">Preferred contact method</label>
+    <div class="flex gap-8 text-ink/85 font-serif text-lg">
+      <label class="inline-flex items-center gap-2"><input type="radio" name="preferred" value="email" checked /> Email</label>
+      <label class="inline-flex items-center gap-2"><input type="radio" name="preferred" value="phone" /> Phone</label>
+    </div>
+  </div>
+  <div>
+    <label for="referral" class="eyebrow block mb-3">How did you hear about Gail? (optional)</label>
+    <select
+      id="referral"
+      name="referral"
+      class="w-full bg-card border border-input px-5 py-4 font-serif text-lg text-ink focus:outline-none focus:border-sage-deep transition"
+    >
+      <option value="">Select one</option>
+      <option>Referral from another therapist</option>
+      <option>Referral from a friend or family member</option>
+      <option>Physician or healthcare provider</option>
+      <option>Online search</option>
+      <option>Psychology Today</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+  <button type="submit" class="btn-quiet mt-4">Request a consultation</button>
+  <p id="form-success" class="mt-6 p-5 bg-sage-deep text-ivory font-serif italic hidden" role="status">
+    Thank you. Your note has been received. I respond to all inquiries within two business days, by your preferred method.
+  </p>
+  <p id="form-error" class="mt-6 p-5 bg-rose/20 text-ink font-serif italic hidden" role="alert"></p>
+</form>
+
+<script>
+  const form = document.getElementById('consultation-form') as HTMLFormElement | null;
+  const success = document.getElementById('form-success');
+  const error = document.getElementById('form-error');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    success?.classList.add('hidden');
+    error?.classList.add('hidden');
+
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const message = String(data.get('message') || '').trim();
+    const preferred = String(data.get('preferred') || 'email');
+
+    if (!name) {
+      error!.textContent = 'Please share your name';
+      error?.classList.remove('hidden');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      error!.textContent = 'A valid email helps me reach you';
+      error?.classList.remove('hidden');
+      return;
+    }
+    if (!message) {
+      error!.textContent = 'A sentence or two is enough';
+      error?.classList.remove('hidden');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: String(data.get('phone') || '').trim(),
+          message,
+          preferred,
+          referral: String(data.get('referral') || '').trim(),
+          company: String(data.get('company') || '').trim()
+        })
+      });
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error || 'Something went wrong. Please try again.');
+      }
+      form.reset();
+      success?.classList.remove('hidden');
+    } catch (err) {
+      error!.textContent = err instanceof Error ? err.message : 'Something went wrong.';
+      error?.classList.remove('hidden');
+    }
+  });
+</script>
+
