@@ -1,0 +1,45 @@
+---
+interface Props {
+  /** Path without extension, e.g. /images/gail-garden-hero */
+  base: string;
+  alt: string;
+  width: number;
+  height: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+  decoding?: 'async' | 'sync' | 'auto';
+}
+
+const {
+  base,
+  alt,
+  width,
+  height,
+  class: className,
+  loading = 'lazy',
+  fetchpriority,
+  sizes,
+  decoding = 'async'
+} = Astro.props;
+
+const hasWebp = true;
+const jpg = `${base}.jpg`;
+const webp = `${base}.webp`;
+---
+
+<picture>
+  {hasWebp && <source srcset={webp} type="image/webp" sizes={sizes} />}
+  <img
+    src={jpg}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    decoding={decoding}
+    fetchpriority={fetchpriority}
+    sizes={sizes}
+  />
+</picture>

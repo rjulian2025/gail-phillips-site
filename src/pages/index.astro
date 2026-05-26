@@ -1,31 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site } from '../data/site';
+import HeroBackground from '../components/HeroBackground.astro';
 
 const title = 'Gail A. Phillips, LCSW — Psychodynamic Psychotherapy';
 const description =
   'Deep psychodynamic psychotherapy for adults ready to change at the root. Buckhead, Atlanta and virtual sessions across Georgia and Florida.';
+const heroPreload = '/images/gail-garden-hero-1280.webp';
 ---
 
-<BaseLayout title={title} description={description} canonicalPath="/">
+<BaseLayout title={title} description={description} canonicalPath="/" preloadImage={heroPreload}>
   <section class="relative lg:min-h-[88vh] overflow-hidden lg:flex lg:items-center">
-    <div class="lg:hidden">
-      <img
-        src="/images/gail-garden-hero.jpg"
-        alt="Gail A. Phillips, LCSW, smiling warmly in a navy sweater in a sunlit garden with hydrangeas"
-        class="w-full h-[62vh] object-cover object-[75%_center]"
-        width="1920"
-        height="1080"
-      />
-    </div>
-    <img
-      src="/images/gail-garden-hero.jpg"
-      alt=""
-      aria-hidden="true"
-      class="hidden lg:block absolute inset-0 w-full h-full object-cover object-right"
-      width="1920"
-      height="1080"
-    />
+    <HeroBackground />
     <div class="relative container-wide bg-sage-deep lg:bg-transparent pt-12 pb-16 lg:pt-28 lg:pb-32 w-full">
       <div class="max-w-xl lg:max-w-[34rem]">
         <p class="eyebrow lg:[text-shadow:0_1px_8px_rgba(0,0,0,0.5)]"><span class="rule mr-3"></span>Buckhead · Atlanta · Virtual in GA & FL</p>
@@ -86,8 +71,10 @@ const description =
         alt="Gail A. Phillips' Buckhead consulting room — two upholstered chairs and a leather sofa under warm lamplight"
         class="w-full aspect-[4/3] object-cover shadow-2xl"
         loading="lazy"
+        decoding="async"
         width="1600"
         height="1200"
+        sizes="(max-width: 1024px) 100vw, 50vw"
       />
       <div>
         <p class="eyebrow"><span class="rule mr-3"></span>Who this is for</p>

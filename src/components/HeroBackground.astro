@@ -1,0 +1,29 @@
+---
+/** Single LCP hero image — responsive WebP srcset, one download per viewport. */
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const base = '/images/gail-garden-hero';
+---
+
+<picture class:list={['block w-full lg:absolute lg:inset-0 lg:h-full', className]}>
+  <source
+    type="image/webp"
+    sizes="100vw"
+    srcset={`${base}-640.webp 640w, ${base}-1280.webp 1280w, ${base}.webp 1920w`}
+  />
+  <img
+    src={`${base}.jpg`}
+    alt=""
+    aria-hidden="true"
+    width="1920"
+    height="1080"
+    sizes="100vw"
+    class="w-full h-[62vh] object-cover object-[75%_center] lg:absolute lg:inset-0 lg:h-full lg:object-right"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+  />
+</picture>

@@ -3,7 +3,7 @@ export const site = {
   shortName: 'Gail A. Phillips',
   tagline: 'Psychodynamic psychotherapy for adults seeking deep, lasting change.',
   url: import.meta.env.SITE || 'https://www.gailphillips.net',
-  ogImage: '/images/gail-garden-hero.jpg',
+  ogImage: '/images/gail-garden-hero.webp',
   license: 'LCSW #1528',
   fee: '$250 per session, private pay',
   email: 'gail@example.com',

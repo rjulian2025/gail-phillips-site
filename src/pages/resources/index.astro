@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import OptimizedImage from '../../components/OptimizedImage.astro';
 import { articles } from '../../data/articles';
 import { articleImages } from '../../data/article-images';
 
@@ -72,14 +73,13 @@ const topics = [
                       class="group flex flex-col h-full bg-card border border-border hover:border-sage transition-colors duration-300 shadow-sm hover:shadow-lg"
                     >
                       <div class="relative overflow-hidden aspect-[5/3]">
-                        <img
-                          src={articleImages[article.slug] || '/images/path-hero-b.jpg'}
+                        <OptimizedImage
+                          base={articleImages[article.slug] || '/images/path-hero-b'}
                           alt=""
-                          aria-hidden="true"
+                          width={1024}
+                          height={768}
                           class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          loading="lazy"
-                          width="1024"
-                          height="768"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
                         <div class="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" aria-hidden="true"></div>
                       </div>
