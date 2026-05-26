@@ -40,9 +40,19 @@ const { year } = Astro.props;
     </div>
   </div>
   <div class="border-t border-ivory/10">
-    <div class="container-wide py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-ivory/80">
+    <div class="container-wide py-6 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs text-ivory/80">
       <p>© {year} {site.name}. All rights reserved.</p>
       <p>{site.license} · Georgia & Florida · {site.fee}</p>
+      <p>
+        <a
+          href="https://www.deeperwebsites.com"
+          class="text-ivory/80 hover:text-ivory transition"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          A Deeper website.
+        </a>
+      </p>
     </div>
   </div>
 </footer>
