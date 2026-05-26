@@ -1,21 +1,39 @@
 {
   "redirects": [
     { "source": "/about-me", "destination": "/about", "permanent": true },
+    { "source": "/about-me/", "destination": "/about", "permanent": true },
     { "source": "/about-me/counseling-and-psychotherapy-philosophy", "destination": "/the-work", "permanent": true },
+    { "source": "/about-me/counseling-and-psychotherapy-philosophy/", "destination": "/the-work", "permanent": true },
     { "source": "/about-me/theoretical-orientation", "destination": "/the-work", "permanent": true },
+    { "source": "/about-me/theoretical-orientation/", "destination": "/the-work", "permanent": true },
     { "source": "/about-me/resume", "destination": "/about", "permanent": true },
+    { "source": "/about-me/resume/", "destination": "/about", "permanent": true },
     { "source": "/appointments", "destination": "/begin", "permanent": true },
+    { "source": "/appointments/", "destination": "/begin", "permanent": true },
     { "source": "/appointments/free-phone-consultation", "destination": "/begin", "permanent": true },
+    { "source": "/appointments/free-phone-consultation/", "destination": "/begin", "permanent": true },
     { "source": "/appointments/patient-forms", "destination": "/begin", "permanent": true },
+    { "source": "/appointments/patient-forms/", "destination": "/begin", "permanent": true },
     { "source": "/contact-information", "destination": "/begin", "permanent": true },
+    { "source": "/contact-information/", "destination": "/begin", "permanent": true },
     { "source": "/client-testimonials", "destination": "/about", "permanent": true },
+    { "source": "/client-testimonials/", "destination": "/about", "permanent": true },
     { "source": "/relationship-problems", "destination": "/resources/relationships", "permanent": true },
+    { "source": "/relationship-problems/", "destination": "/resources/relationships", "permanent": true },
     { "source": "/anxiety", "destination": "/resources/anxiety", "permanent": true },
+    { "source": "/anxiety/", "destination": "/resources/anxiety", "permanent": true },
     { "source": "/depression", "destination": "/resources/depression", "permanent": true },
+    { "source": "/depression/", "destination": "/resources/depression", "permanent": true },
     { "source": "/parenting-problems", "destination": "/who-i-work-with#parenting", "permanent": true },
+    { "source": "/parenting-problems/", "destination": "/who-i-work-with#parenting", "permanent": true },
     { "source": "/addiction", "destination": "/who-i-work-with#addiction", "permanent": true },
+    { "source": "/addiction/", "destination": "/who-i-work-with#addiction", "permanent": true },
     { "source": "/eating-disorders-2", "destination": "/who-i-work-with#eating-disorders", "permanent": true },
-    { "source": "/destructive-dieting", "destination": "/who-i-work-with#eating-disorders", "permanent": true }
+    { "source": "/eating-disorders-2/", "destination": "/who-i-work-with#eating-disorders", "permanent": true },
+    { "source": "/destructive-dieting", "destination": "/who-i-work-with#eating-disorders", "permanent": true },
+    { "source": "/destructive-dieting/", "destination": "/who-i-work-with#eating-disorders", "permanent": true },
+    { "source": "/resources", "destination": "/resources", "permanent": true },
+    { "source": "/resources/", "destination": "/resources", "permanent": true }
   ],
   "headers": [
     {
@@ -24,6 +42,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/wp-content/:path*", "destination": "/api/gone" }
+    { "source": "/wp-content/:path*", "destination": "/api/gone" },
+    { "source": "/wp-includes/:path*", "destination": "/api/gone" }
   ]
 }

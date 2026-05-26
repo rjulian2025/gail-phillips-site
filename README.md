@@ -15,8 +15,11 @@ http://127.0.0.1:4323
 
 ## Deploy (Vercel)
 
-1. Create a **new** Vercel project linked to this repository only.
-2. Set `SITE_URL`, `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`.
-3. Point **gailphillips.net** at this deployment (not the Michel Bordeau domain).
+1. Use the **gail-phillips-site** Vercel project only (not Michel or other clients).
+2. Set `SITE_URL=https://www.gailphillips.net`, plus Resend vars when ready.
+3. Point **gailphillips.net** and **www.gailphillips.net** at Vercel; prefer **www** as primary (matches the old site).
+4. Legacy WordPress 301s and 410s are in `vercel.json` (audited against the old-site crawl).
+
+**SEO launch checklist:** [`docs/seo-launch.md`](./docs/seo-launch.md)
 
 See `.env.example` for required variables.
