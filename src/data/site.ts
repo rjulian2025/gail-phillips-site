@@ -5,10 +5,18 @@ export const site = {
   url: import.meta.env.SITE || 'https://www.gailphillips.net',
   ogImage: '/images/gail-garden-hero.webp',
   license: 'LCSW #1528',
-  fee: '$250 per session, private pay',
-  // Contact is via /begin form → /api/contact (CONTACT_TO_EMAIL in Vercel). No public inbox on site.
-  email: '',
-  phone: ''
+  footerTagline: 'Psychotherapy Private Practice in Buckhead Since 1992 · LCSW #1528',
+  fees: {
+    standard: '$250 per 50-minute session',
+    extended: '$500 per 110-minute session'
+  },
+  email: 'gail@gailphillips.net',
+  phone: '(404) 982-9010',
+  phoneTel: '+14049829010',
+  address: {
+    line1: '2734 N. Hills Drive, NE',
+    city: 'Atlanta, Georgia 30305'
+  }
 } as const;
 
 export const nav = [

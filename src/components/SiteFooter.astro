@@ -8,7 +8,7 @@ const { year } = Astro.props;
 ---
 
 <footer class="bg-sage-deep text-ivory">
-  <div class="container-wide py-20 grid gap-16 lg:grid-cols-3">
+  <div class="container-wide py-20 grid gap-16 sm:grid-cols-2 lg:grid-cols-4">
     <div>
       <p class="eyebrow !text-gold">Begin</p>
       <h2 class="mt-4 font-serif text-3xl text-ivory">You've taken the hardest step.</h2>
@@ -21,12 +21,23 @@ const { year } = Astro.props;
       </a>
     </div>
     <div class="space-y-3 text-sm text-ivory/85">
-      <p class="eyebrow !text-gold">Practice</p>
+      <p class="eyebrow !text-gold">Contact</p>
       <p class="text-ivory">{site.name}</p>
+      <p>{site.address.line1}</p>
+      <p>{site.address.city}</p>
+      <p>
+        <a href={`mailto:${site.email}`} class="hover:text-ivory">{site.email}</a>
+      </p>
+      <p>
+        <a href={`tel:${site.phoneTel}`} class="hover:text-ivory">{site.phone}</a>
+      </p>
+    </div>
+    <div class="space-y-3 text-sm text-ivory/85">
+      <p class="eyebrow !text-gold">Practice</p>
+      <p>Individuals, Couples and Families</p>
       <p>Psychodynamic Psychotherapy</p>
-      <p>Buckhead, Atlanta</p>
-      <p>In-person & virtual sessions</p>
-      <p>Licensed in Georgia & Florida</p>
+      <p>Buckhead, Atlanta: In-person</p>
+      <p>Virtual Sessions: Georgia & Florida</p>
     </div>
     <div class="space-y-3 text-sm text-ivory/85">
       <p class="eyebrow !text-gold">Explore</p>
@@ -42,7 +53,7 @@ const { year } = Astro.props;
   <div class="border-t border-ivory/10">
     <div class="container-wide py-6 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs text-ivory/80">
       <p>© {year} {site.name}. All rights reserved.</p>
-      <p>{site.license} · Georgia & Florida · {site.fee}</p>
+      <p>{site.footerTagline}</p>
       <p>
         <a
           href="https://www.deeperwebsites.com"
@@ -57,4 +68,3 @@ const { year } = Astro.props;
     </div>
   </div>
 </footer>
-

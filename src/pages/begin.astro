@@ -30,11 +30,17 @@ const description =
           <dl class="mt-5 space-y-3 text-base">
             <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
               <dt class="text-xs uppercase tracking-widest font-bold text-gold">Fee</dt>
-              <dd class="text-muted-foreground">{site.fee}</dd>
+              <dd class="text-muted-foreground space-y-1">
+                <p>{site.fees.standard}</p>
+                <p>{site.fees.extended}</p>
+              </dd>
             </div>
             <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
               <dt class="text-xs uppercase tracking-widest font-bold text-gold">In-person</dt>
-              <dd class="text-muted-foreground">Buckhead, Atlanta — discreet private entrance</dd>
+              <dd class="text-muted-foreground">
+                Buckhead, Atlanta<br />
+                — discreet private entrance
+              </dd>
             </div>
             <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
               <dt class="text-xs uppercase tracking-widest font-bold text-gold">Virtual</dt>
@@ -50,7 +56,7 @@ const description =
             </div>
             <div class="grid grid-cols-[8rem_1fr] gap-4 py-2 border-b border-border/60">
               <dt class="text-xs uppercase tracking-widest font-bold text-gold">Contact</dt>
-              <dd class="text-muted-foreground">Email or phone call-back — no texts</dd>
+              <dd class="text-muted-foreground">Email or Call — no texts please</dd>
             </div>
           </dl>
         </div>
