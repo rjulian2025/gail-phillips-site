@@ -27,6 +27,7 @@ const {
 
 const canonical = new URL(canonicalPath, site.url).href;
 const shareImage = new URL(site.ogImage, site.url).href;
+const siteBase = site.url.replace(/\/$/, '');
 const pageSchema = Array.isArray(schema) ? schema : schema ? [schema] : [];
 const year = new Date().getFullYear();
 ---
@@ -41,15 +42,28 @@ const year = new Date().getFullYear();
     <meta name="author" content={site.name} />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${site.name} — Resources`}
+      href={`${siteBase}/feed.xml`}
+    />
+    <link rel="alternate" type="text/plain" title="LLM index" href={`${siteBase}/llms.txt`} />
+    <link rel="alternate" type="text/plain" title="LLM full site guide" href={`${siteBase}/llms-full.txt`} />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href={`${siteBase}/sitemap.xml`} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={shareImage} />
+    <meta property="og:image:alt" content={`${site.shortName} — psychodynamic psychotherapy in Buckhead, Atlanta`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={shareImage} />
+    <meta name="twitter:image:alt" content={`${site.shortName} — psychodynamic psychotherapy in Buckhead, Atlanta`} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {
       preloadImage && (

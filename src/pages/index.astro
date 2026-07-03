@@ -1,14 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroBackground from '../components/HeroBackground.astro';
+import { homePageSchema } from '../data/home-schema';
 
 const title = 'Gail A. Phillips, LCSW — Psychodynamic Psychotherapy';
 const description =
   'Deep psychodynamic psychotherapy for adults ready to change at the root. Buckhead, Atlanta and virtual sessions across Georgia and Florida.';
 const heroPreload = '/images/gail-garden-hero-1280.webp';
+const schema = homePageSchema(title, description);
 ---
 
-<BaseLayout title={title} description={description} canonicalPath="/" preloadImage={heroPreload}>
+<BaseLayout title={title} description={description} canonicalPath="/" preloadImage={heroPreload} schema={schema}>
   <section class="relative lg:min-h-[88vh] overflow-hidden lg:flex lg:items-center">
     <HeroBackground />
     <div class="relative container-wide bg-sage-deep lg:bg-transparent pt-12 pb-16 lg:pt-28 lg:pb-32 w-full">

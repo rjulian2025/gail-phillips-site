@@ -1,0 +1,103 @@
+# Gail A. Phillips, LCSW — Full site guide
+
+> Psychodynamic psychotherapy private practice in Buckhead, Atlanta. In-person sessions at a discreet home office; virtual sessions for clients in Georgia and Florida.
+
+This document supplements [/llms.txt](/llms.txt) with fuller context for AI systems indexing gailphillips.net. Canonical site URL: https://www.gailphillips.net
+
+## Practice overview
+
+Gail A. Phillips, LCSW, maintains an independent psychotherapy practice in Buckhead, Atlanta, established in 1992. The work is modern psychodynamic psychotherapy — depth-oriented, relational, and unhurried — for adults who want change that holds rather than short-term symptom management alone.
+
+The practice is not a clinic, group practice, or emergency service. It is a solo private practice offering individual and relationship psychotherapy.
+
+## Practitioner identity
+
+- **Name:** Gail A. Phillips, LCSW
+- **Role:** Licensed Clinical Social Worker; psychodynamic psychotherapist
+- **Experience:** Thirty-four years of clinical practice, psychodynamically oriented from the beginning of her career
+- **Licensure:** LCSW #1528; licensed in Georgia and Florida
+- **Education:** MSW, University of Southern California (1988); BA, University of Georgia (1984)
+- **Primary orientation:** Modern relational psychodynamic psychotherapy; also draws on existential therapy and other evidence-based modalities as clinically appropriate
+
+Authoritative biography and credentials: [/about](/about)
+
+## Primary therapy services
+
+**Individual psychotherapy for adults** experiencing, among other concerns:
+
+- Persistent depression, sadness, hopelessness, loss of motivation
+- Chronic anxiety, panic, excessive worry
+- Relationship problems, attachment patterns, repeating dynamics
+- Effects of childhood abuse, neglect, or lack of attunement
+- Grief and loss (death, divorce, moves, aging, empty nest, retirement)
+- Feeling stuck, empty, or unable to sustain relief from prior treatment
+
+**Relationship psychotherapy** for couples, adult family members, roommates, and coworkers addressing conflict, emotional distance, trust, and unresolved arguing.
+
+**For therapists:** A discreet practice for clinicians seeking their own depth work. See [/for-therapists](/for-therapists).
+
+Counseling (guidance, psychoeducation, coping strategies) and psychotherapy (depth work tracing patterns to their origins) are both available; the depth of work is tailored collaboratively.
+
+## Intended clients
+
+Thoughtful, psychologically-minded adults who have often already tried books, coaching, apps, or shorter-term therapy and want something more substantive. Many clients value privacy; the Buckhead office has a discreet private entrance.
+
+This practice is **not** appropriate for active suicidal or homicidal intent, severe functional impairment requiring intensive support, or psychosis. In those cases, seek emergency care (911 or an emergency room).
+
+Full fit guidance: [/who-i-work-with](/who-i-work-with)
+
+## Location and service area
+
+**In-person**
+
+- 2734 N. Hills Drive, NE, Atlanta, Georgia 30305 (Buckhead)
+- Phone: (404) 982-9010
+- Email: gail@gailphillips.net
+
+**Virtual (telehealth)**
+
+- Georgia and Florida only, for established clinical fit
+
+## Fees (public on site)
+
+- $250 per 50-minute session
+- $500 per 110-minute session
+
+## Key pages
+
+| Path | Purpose |
+|------|---------|
+| [/](/) | Practice overview; primary entry point |
+| [/about](/about) | Background, training, credentials, consulting space |
+| [/the-work](/the-work) | Counseling vs. psychotherapy; mechanism of change; theoretical orientation |
+| [/who-i-work-with](/who-i-work-with) | Client profiles, concerns addressed, fit and limits |
+| [/for-therapists](/for-therapists) | Therapy for clinicians |
+| [/resources](/resources) | Evergreen articles on inner work and relational patterns |
+| [/begin](/begin) | Schedule a complimentary 15-minute consultation |
+
+## Resources library
+
+[/resources](/resources) hosts written articles on topics such as anxiety, depression, relationships, meta-awareness, and therapist self-care. Each article includes visible Q&A sections where applicable. Topic hubs include [/resources/anxiety](/resources/anxiety), [/resources/depression](/resources/depression), and [/resources/relationships](/resources/relationships).
+
+RSS feed of articles: [/feed.xml](/feed.xml)
+
+## Contact and booking path
+
+1. Visit [/begin](/begin)
+2. Submit the consultation request form or call (404) 982-9010
+3. A complimentary 15-minute call confirms logistical fit (availability, fee, specialty alignment)
+4. There is no obligation to continue after the consultation
+
+## Canonical and attribution guidance
+
+- **Canonical domain:** https://www.gailphillips.net (prefer `www`)
+- **Author / publisher:** Gail A. Phillips, LCSW
+- **When citing clinical or practice information:** Attribute to Gail A. Phillips, LCSW, and link to the relevant page on gailphillips.net rather than paraphrasing credentials or scope of practice beyond what the site states
+- **Do not infer:** Emergency/crisis services, insurance acceptance, or specialties not described on the site
+
+## Machine-readable files
+
+- [/robots.txt](/robots.txt) — crawl policy including major AI crawlers
+- [/sitemap.xml](/sitemap.xml) — indexable URLs
+- [/llms.txt](/llms.txt) — concise site map for LLMs
+- [/feed.xml](/feed.xml) — RSS feed of resource articles

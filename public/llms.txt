@@ -4,6 +4,10 @@
 
 Gail A. Phillips is a Licensed Clinical Social Worker with thirty-four years of experience in modern psychodynamic psychotherapy. The practice focuses on depth work — anxiety, depression, relational patterns, grief, parenting, addiction, and eating concerns — for adults who have tried other approaches and want something more substantive.
 
+Canonical URL: https://www.gailphillips.net
+
+For a fuller site guide (services, location, booking, attribution): [/llms-full.txt](/llms-full.txt)
+
 ## Pages
 
 - [Home](/): Practice overview and invitation to begin.
@@ -13,6 +17,10 @@ Gail A. Phillips is a Licensed Clinical Social Worker with thirty-four years of 
 - [For Therapists](/for-therapists): A discreet practice for clinicians seeking their own depth work.
 - [Resources](/resources): Library of evergreen articles on the inner work.
 - [Begin](/begin): Schedule a complimentary 15-minute consultation.
+
+## Feeds
+
+- [RSS feed](/feed.xml): Resource articles and updates.
 
 ## Optional
 
