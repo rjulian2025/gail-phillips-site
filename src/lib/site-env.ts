@@ -18,6 +18,10 @@ export function isIndexableBuild(): boolean {
   return import.meta.env.PROD;
 }
 
+export function shouldNoindex(): boolean {
+  return !isIndexableBuild();
+}
+
 /** Omit meta robots on indexable production builds; emit noindex,nofollow otherwise. */
 export function robotsMetaContent(): string | null {
   return isIndexableBuild() ? null : 'noindex, nofollow';
