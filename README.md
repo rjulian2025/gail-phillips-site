@@ -15,6 +15,17 @@ npm run dev
 
 http://127.0.0.1:4324
 
+## Production
+
+| Item | Value |
+|------|--------|
+| Domain | https://www.gailphillips.net |
+| Vercel project | `gail-phillips-site` |
+| GitHub | `rjulian2025/gail-phillips-site` |
+| Production branch | `main` |
+
+Analytics are intentionally disabled (privacy-minimal policy). Preview builds use `PUBLIC_INDEXABLE=false` or Vercel preview env for noindex guardrails.
+
 ## Deploy (Vercel)
 
 1. Use the **gail-phillips-site** Vercel project only (not Michel or other clients).
@@ -25,3 +36,7 @@ http://127.0.0.1:4324
 **SEO launch checklist:** [`docs/seo-launch.md`](./docs/seo-launch.md)
 
 See `.env.example` for required variables.
+
+## Rollback
+
+Redeploy a prior known-good commit from the Vercel dashboard, or revert on `main` and push. Record the deployment ID and SHA in the operator registry. Current approved production baseline: commit `7af74175` (Phase 2E security headers).

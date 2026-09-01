@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 const site =
@@ -8,6 +8,13 @@ const site =
 export default defineConfig({
   site,
   trailingSlash: 'never',
+  env: {
+    schema: {
+      SITE_URL: envField.string({ context: 'server', access: 'public', optional: true }),
+      VERCEL_ENV: envField.string({ context: 'server', access: 'public', optional: true }),
+      PUBLIC_INDEXABLE: envField.string({ context: 'client', access: 'public', optional: true })
+    }
+  },
   vite: {
     plugins: [tailwindcss()]
   }

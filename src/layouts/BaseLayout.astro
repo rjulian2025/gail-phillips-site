@@ -3,6 +3,7 @@ import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { site } from '../data/site';
+import { robotsMetaContent } from '../lib/site-env';
 
 interface Props {
   title: string;
@@ -11,6 +12,7 @@ interface Props {
   ogType?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
+  robots?: string;
   /** Preload LCP image (path to .webp) for faster largest contentful paint */
   preloadImage?: string;
 }
@@ -22,8 +24,11 @@ const {
   ogType = 'website',
   schema = [],
   noindex = false,
+  robots,
   preloadImage
 } = Astro.props;
+
+const resolvedRobots = robots ?? (noindex ? 'noindex, nofollow' : robotsMetaContent());
 
 const canonical = new URL(canonicalPath, site.url).href;
 const shareImage = new URL(site.ogImage, site.url).href;
@@ -40,7 +45,7 @@ const year = new Date().getFullYear();
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={site.name} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {resolvedRobots && <meta name="robots" content={resolvedRobots} />}
     <link rel="canonical" href={canonical} />
     <link
       rel="alternate"
