@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Exact HTML for the email signature block. Do not alter styling or image URL.
+const signatureHtml = `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Georgia,'Times New Roman',serif;color:#2b2622;">
+<tr>
+<td valign="top" style="padding:0 18px 0 0;">
+<img src="https://www.gailphillips.net/images/gail-signature-headshot.jpg" width="90" height="90" alt="Gail A. Phillips, LCSW" style="display:block;width:90px;height:90px;border-radius:50%;border:0;">
+</td>
+<td valign="top" style="padding:0 0 0 18px;border-left:2px solid #b98a82;">
+<div style="font-size:18px;line-height:24px;color:#2f3d33;font-weight:bold;">Gail A. Phillips, LCSW</div>
+<div style="font-size:13px;line-height:19px;color:#645a52;padding:0 0 8px 0;">Psychotherapy for Anxiety, Depression and Relationships.</div>
+<div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;">
+<a href="tel:+14049829010" style="color:#2b2622;text-decoration:none;">404-982-9010</a><br>
+<a href="mailto:gail@gailphillips.net" style="color:#4f6352;text-decoration:none;">gail@gailphillips.net</a><br>
+<a href="https://www.gailphillips.net/" style="color:#4f6352;text-decoration:none;">www.gailphillips.net</a><br>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2734+N.+Hills+Drive+NE,+Atlanta,+GA+30305" style="color:#2b2622;text-decoration:none;">2734 N. Hills Drive NE, Atlanta, GA 30305</a>
+</div>
+<div style="font-size:13px;line-height:19px;color:#2f3d33;font-style:italic;padding:10px 0 0 0;">May you be well and free from suffering.<br>May you be happy, playful, and joyful.<br>May you be loved and deeply love yourself and others.<br>May you be at peace and live with ease.</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="padding:14px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;color:#8a8580;max-width:520px;">
+HIPAA Notice: This message may be confidential and exempt from disclosure. If you received this in error, please email it back to the sender and delete it from all electronic storage. Thank you.
+</td>
+</tr>
+</table>`;
+---
+
+<BaseLayout title="Your Email Signature | Gail A. Phillips, LCSW" description="Gail's email signature and simple steps to add it." canonicalPath="/email-signature" noindex>
+  <section class="container-prose py-16">
+    <h1 class="font-serif text-3xl md:text-4xl text-foreground mb-4">Your email signature</h1>
+    <p class="text-lg text-muted-foreground mb-10">Hi Gail. Here is your new signature. Adding it takes about two minutes, and you only need to do it once.</p>
+
+    <div class="rounded-2xl border border-border bg-white p-6 md:p-8 shadow-sm mb-6 overflow-auto">
+      <div id="signature" set:html={signatureHtml} />
+    </div>
+
+    <button id="copy-sig" type="button" class="btn-quiet !py-3 !px-6">Copy signature</button>
+    <p id="copy-status" class="mt-3 text-sm text-muted-foreground" aria-live="polite"></p>
+    <p class="mt-4 text-sm text-muted-foreground">If the button does not work, click and drag across the whole signature above to highlight it, then press Command and C on a Mac (or Control and C on a PC) to copy it.</p>
+
+    <h2 class="font-serif text-2xl text-foreground mt-14 mb-4">Gmail</h2>
+    <ol class="list-decimal pl-6 space-y-2 text-foreground">
+      <li>Click the gear icon at the top right, then click <strong>See all settings</strong>.</li>
+      <li>Stay on the <strong>General</strong> tab and scroll down to <strong>Signature</strong>.</li>
+      <li>Click <strong>Create new</strong>, give it a name, and paste the signature into the box.</li>
+      <li>Under <strong>Signature defaults</strong>, choose it for new emails and for replies and forwards.</li>
+      <li>Scroll to the very bottom and click <strong>Save Changes</strong>.</li>
+      <li>Send yourself a test email to see how it looks.</li>
+    </ol>
+
+    <h2 class="font-serif text-2xl text-foreground mt-12 mb-4">Apple Mail</h2>
+    <ol class="list-decimal pl-6 space-y-2 text-foreground">
+      <li>Open Mail, then choose <strong>Mail</strong> in the top menu and click <strong>Settings</strong>.</li>
+      <li>Click <strong>Signatures</strong>, pick your account on the left, and click the <strong>+</strong> button.</li>
+      <li>Uncheck <strong>Always match my default message font</strong>.</li>
+      <li>Paste the signature into the box on the right. It saves on its own.</li>
+      <li>Send yourself a test email to see how it looks.</li>
+    </ol>
+
+    <h2 class="font-serif text-2xl text-foreground mt-12 mb-4">Outlook</h2>
+    <ol class="list-decimal pl-6 space-y-2 text-foreground">
+      <li>Open <strong>Settings</strong>, then go to <strong>Accounts</strong> and click <strong>Signatures</strong>.</li>
+      <li>Create a new signature and paste it into the box.</li>
+      <li>Choose it for new messages and replies, then click <strong>Save</strong>.</li>
+      <li>Send yourself a test email to see how it looks.</li>
+    </ol>
+
+    <p class="mt-12 text-foreground">If anything looks off, just reply to Rick and he will take care of it.</p>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var btn = document.getElementById('copy-sig');
+      var status = document.getElementById('copy-status');
+      var sig = document.getElementById('signature');
+      if (!btn || !sig) return;
+      btn.addEventListener('click', async function () {
+        var html = sig.innerHTML;
+        try {
+          if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+            await navigator.clipboard.write([new ClipboardItem({
+              'text/html': new Blob([html], { type: 'text/html' }),
+              'text/plain': new Blob([sig.innerText], { type: 'text/plain' })
+            })]);
+          } else {
+            var range = document.createRange();
+            range.selectNodeContents(sig);
+            var sel = window.getSelection();
+            if (!sel) throw new Error('No selection');
+            sel.removeAllRanges();
+            sel.addRange(range);
+            document.execCommand('copy');
+            sel.removeAllRanges();
+          }
+          status.textContent = 'Copied. Now paste it into your email settings.';
+        } catch (_e) {
+          status.textContent = 'That did not work in this browser. Please use the highlight and copy steps below.';
+        }
+      });
+    })();
+  </script>
+</BaseLayout>
+
