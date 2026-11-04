@@ -70,6 +70,7 @@ const year = new Date().getFullYear();
     <meta name="twitter:image" content={shareImage} />
     <meta name="twitter:image:alt" content={`${site.shortName} — psychodynamic psychotherapy in Buckhead, Atlanta`} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="google-site-verification" content="Rnj9eg5v0FgZTqiUAkwtKUsTlkURa-ROFzWZXjtZ31s" />
     {
       preloadImage && (
         <link
@@ -86,6 +87,13 @@ const year = new Date().getFullYear();
     {pageSchema.map((entry) => (
       <script type="application/ld+json" set:html={JSON.stringify(entry)} />
     ))}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDYPSHLRPV"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EDYPSHLRPV');
+    </script>
     <slot name="head" />
   </head>
   <body>
